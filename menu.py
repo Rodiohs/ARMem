@@ -1,7 +1,3 @@
-import time
-
-numero_jugador=0
-
 def menu_inicio(lista_jugadores):
     print (chr(27) + "[2J")
     print("¡Juego de ordenar!\nMenú principal\n1 - Registro de jugadores\n2 - Iniciar el juego")
