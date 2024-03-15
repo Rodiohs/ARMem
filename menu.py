@@ -1,9 +1,8 @@
 import time
 
-listaJugadores=[]
-numeroJugador=0
+numero_jugador=0
 
-def menu():
+def menu_inicio(lista_jugadores):
     print (chr(27) + "[2J")
     print("¡Juego de ordenar!\nMenú principal\n1 - Registro de jugadores\n2 - Iniciar el juego")
     opcion=(input("Escriba 1 o 2 para seleccionar una acción: "))
@@ -11,17 +10,16 @@ def menu():
         print("Escriba únicamente 1 o 2 para la selección de una acción.")
         time.sleep(3)
         print (chr(27) + "[2J")
-        menu()
+        menu_inicio()
     if opcion=="1":
-         registro(listaJugadores,numeroJugador)
-         menu()
+         registro(lista_jugadores,numero_jugador)
     if opcion=="2":
-        return
+        return(lista_jugadores)
 
-def registro(listaJugadores,numeroJugador):
+def registro(lista_jugadores,numero_jugador):
     while True:
         print (chr(27) + "[2J")
-        for elemento in listaJugadores:
+        for elemento in lista_jugadores:
             print(elemento[0],end=" . ")
         print("\n¡Registro de jugadores!\n1 - Registrar un jugador nuevo\n2 - Olvidar a todos los jugadores\n3 - Salir al menú para jugar")
         opcion=(input("Escriba 1, 2 o 3 para seleccionar una acción: "))
@@ -33,16 +31,12 @@ def registro(listaJugadores,numeroJugador):
         if opcion=="2":
              print("Jugadores olvidados completamente")
              time.sleep(2)
-             listaJugadores.clear()
-             numeroJugador=0
+             lista_jugadores.clear()
+             numero_jugador=0
         if opcion=="1":
             nombre=input("Inserte un nombre o una S para salir al menú: ")
             if nombre=="S":
                  return
-            listaJugadores.append([])
-            listaJugadores[numeroJugador].append(nombre)
-            numeroJugador+=1
-
-menu()
-print(listaJugadores)
-print("De aquí sigue el resto del juego")
+            lista_jugadores.append([])
+            lista_jugadores[numero_jugador].append(nombre)
+            numero_jugador+=1
