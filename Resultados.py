@@ -1,11 +1,11 @@
 import time
 
 def resultados_nivel(lista_jugadores:list,n):
-    print("Nivel",n,"Resultados de la ronda")
+    print("Nivel",n+1,"Resultados de la ronda")
     time.sleep(2)
     ordenar_lista_jugadores(lista_jugadores,n)
     for jugador in lista_jugadores:
-        print("Tiempo de",jugador[0],":",jugador[n])
+        print("Tiempo de",jugador[0],":",jugador[n+1])
         time.sleep(1.5)
         
 def resultados_final(lista_jugadores:list):
