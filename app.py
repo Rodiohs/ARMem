@@ -16,7 +16,22 @@ def juego():
     for n in range(0,3):
         for r in range(0,2):
             for jugador in lista_jugadores:
-                lista_juego_actual = random.sample(lista_juego,3+n)
+                lista_juego_actual = random.sample(lista_juego,3+n) #Se crea una lista aleatoria con 3+n cantidad de digitos, de orden aleatorio, y se cambia cada numero por su respectivo nombre de fruta
+                if 0 in lista_juego_actual:
+                    index = lista_juego_actual.index(0)
+                    lista_juego_actual[index] = "Piña"
+                if 1 in lista_juego_actual:
+                    index = lista_juego_actual.index(1)
+                    lista_juego_actual[index] = "Cereza"
+                if 2 in lista_juego_actual:
+                    index = lista_juego_actual.index(2)
+                    lista_juego_actual[index] = "Uva"
+                if 3 in lista_juego_actual:
+                    index = lista_juego_actual.index(3)
+                    lista_juego_actual[index] = "Pera"
+                if 4 in lista_juego_actual:
+                    index = lista_juego_actual.index(4)
+                    lista_juego_actual[index] = "Guanabana"
                 print(f'Memorice la siguiente secuencia...')
                 print(lista_juego_actual)
                 time.sleep(1)
