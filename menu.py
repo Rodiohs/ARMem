@@ -41,3 +41,15 @@ def registro(lista_jugadores,numero_jugador):
             lista_jugadores.append([])
             lista_jugadores[numero_jugador].append(nombre)
             numero_jugador+=1
+
+def remenu(lista_jugadores):
+    time.sleep(1)
+    print("Preparense para jugar de nuevo!")
+    time.sleep(1)
+    print("3!")
+    time.sleep(1)
+    print("2!")
+    time.sleep(1)
+    print("1!")
+    time.sleep(1)
+    return(lista_jugadores)
