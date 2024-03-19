@@ -13,7 +13,8 @@ def resultados_nivel(lista_jugadores:list,n):
     """
     print(f"\033[1;33;40m Resultados del nivel {n+1}\033[0m ...")
     time.sleep(2)
-    ordenar_lista_jugadores(lista_jugadores,n)
+    ordenar_lista_jugadores(lista_jugadores,n+1)
+    lista_jugadores.reverse()
     for jugador in lista_jugadores:
         time.sleep(1.5)
         print(jugador[0],":",jugador[n+1])
@@ -36,6 +37,7 @@ def resultados_final(lista_jugadores:list):
     time.sleep(2)
     n=4
     ordenar_lista_jugadores(lista_jugadores,n)
+    lista_jugadores.reverse()
     for jugador in lista_jugadores:
         time.sleep(1.5)
         print(jugador[0],":",jugador[4])
@@ -53,13 +55,13 @@ def ordenar_lista_jugadores(lista_jugadores:list,n):
     """
     contador=0
     while contador<(len(lista_jugadores))-1:
-        if lista_jugadores[contador][n]<lista_jugadores[contador+1][n]:
+        if lista_jugadores[contador][n]>lista_jugadores[contador+1][n]:
             temporal=lista_jugadores[contador]
             lista_jugadores[contador]=lista_jugadores[contador+1]
             lista_jugadores[contador+1]=temporal
         contador+=1
     contador=0
     while contador<(len(lista_jugadores))-1:
-        if lista_jugadores[contador][n]<lista_jugadores[contador+1][n]:
+        if lista_jugadores[contador][n]>lista_jugadores[contador+1][n]:
             ordenar_lista_jugadores(lista_jugadores,n)
         contador+=1

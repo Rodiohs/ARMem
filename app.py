@@ -28,8 +28,8 @@ def juego():
     print('\033[2J')  # Código ANSI para limpiar la pantalla en sistemas Windows
     tiempo_total=0
     p=0
-    for n in range(0,3):
-        for r in range(0,5):
+    for n in range(0,1):
+        for r in range(0,1):
             print(f"Nivel actual: \033[33m {n+1} \033[0m")
             print(f"Ronda actual: \033[33m {r+1}\033[0m")
             for jugador in lista_jugadores:
@@ -69,7 +69,7 @@ def juego():
                 tiempo_total+=tiempo_partida
                 print(f'Tiempo de partida: {tiempo_partida}s')
 
-                time.sleep(1)
+                time.sleep(2)
                 print('\033[2J')  # Código ANSI para limpiar la pantalla en sistemas Windows
                 jugador[n+1]+=tiempo_partida
         Resultados.resultados_nivel(lista_jugadores,n)
@@ -93,7 +93,7 @@ def seguir():
     seguir = int(input(f"\033[1;34;40m Desea volver a jugar?\033[0m \n \033[1;33;40m 1\033[0m - Jugar con los mismos usuarios \n \033[1;33;40m 2\033[0m - Reiniciar sin los nombres \n \033[1;33;40m 3\033[0m - Salir del programa \n"))
     if seguir == 1:
         for jugador in lista_jugadores:
-            del lista_jugadores[cont][1:]
+            del jugador[1:5]
         cont+=1
         juego()
     if seguir == 2:
