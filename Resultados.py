@@ -11,14 +11,14 @@ def resultados_nivel(lista_jugadores:list,n):
     Autor:
         Jairo González
     """
-    print(f"Resultados del nivel {n+1}...")
+    print(f"\033[1;33;40m Resultados del nivel {n+1}\033[0m ...")
     time.sleep(2)
     ordenar_lista_jugadores(lista_jugadores,n)
     for jugador in lista_jugadores:
         time.sleep(1.5)
         print(jugador[0],":",jugador[n+1])
     lista_jugadores.reverse()
-    print(f"Y así es como {lista_jugadores[0][0]} llevó la ventaja en este nivel.")
+    print(f"Y así es como \033[1;33;40m{lista_jugadores[0][0]}\033[0m llevó la ventaja en este nivel.")
         
 def resultados_final(lista_jugadores:list):
     """resultados_final muestra los resultados al terminar el juego, al mostrar los tiempos que cada jugador duró y el orden
@@ -30,7 +30,7 @@ def resultados_final(lista_jugadores:list):
     Autor:
         Jairo González
     """
-    print("Resultados finales del juego...")
+    print(f"\033[1;33;40m Resultados finales del juego...\033[0m")
     for jugador in lista_jugadores:
             jugador.append(jugador[1]+jugador[2]+jugador[3])
     time.sleep(2)
@@ -40,7 +40,7 @@ def resultados_final(lista_jugadores:list):
         time.sleep(1.5)
         print(jugador[0],":",jugador[4])
     lista_jugadores.reverse()
-    print(f"Y así es como {lista_jugadores[0][0]} se corona como el ganador de esta partida.")
+    print(f"Y así es como \033[1;33;40m{lista_jugadores[0][0]}\033[0m se corona como el ganador de esta partida.")
     
 def ordenar_lista_jugadores(lista_jugadores:list,n):
     """ordenar_lista_jugadores ordenará los jugadores de peores tiempos a mejores tiempos en cada "n" nivel.
