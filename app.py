@@ -24,8 +24,8 @@ def juego():
 
     print('\033[2J')  # Código ANSI para limpiar la pantalla en sistemas Windows
     tiempo_total=0
-    for n in range(0,1):
-        for r in range(0,1):
+    for n in range(0,5):
+        for r in range(0,3):
             for jugador in lista_jugadores:
                 lista_juego_actual = random.sample(lista_juego,3+n) #Se crea una lista aleatoria con 3+n cantidad de digitos, de orden aleatorio, y se cambia cada numero por su respectivo nombre de fruta
                 lista_armem = lista_juego_actual.copy()
