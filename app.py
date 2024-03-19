@@ -24,28 +24,31 @@ def juego():
 
     print('\033[2J')  # Código ANSI para limpiar la pantalla en sistemas Windows
     tiempo_total=0
-    for n in range(0,5):
-        for r in range(0,3):
+    for n in range(0,3):
+        for r in range(0,5):
             for jugador in lista_jugadores:
                 lista_juego_actual = random.sample(lista_juego,3+n) #Se crea una lista aleatoria con 3+n cantidad de digitos, de orden aleatorio, y se cambia cada numero por su respectivo nombre de fruta
                 lista_armem = lista_juego_actual.copy()
                 if 0 in lista_juego_actual:
                     index = lista_juego_actual.index(0)
-                    lista_juego_actual[index] = "Piña"
+                    lista_juego_actual[index] = f" \033[1;33;40m Piña \033[0m"
                 if 1 in lista_juego_actual:
                     index = lista_juego_actual.index(1)
-                    lista_juego_actual[index] = "Cereza"
+                    lista_juego_actual[index] = f" \033[1;31;40m Cereza \033[0m"
                 if 2 in lista_juego_actual:
                     index = lista_juego_actual.index(2)
-                    lista_juego_actual[index] = "Uva"
+                    lista_juego_actual[index] = f" \033[1;35;40m Uva \033[0m"
                 if 3 in lista_juego_actual:
                     index = lista_juego_actual.index(3)
-                    lista_juego_actual[index] = "Pera"
+                    lista_juego_actual[index] = f" \033[1;32;40m Pera \033[0m"
                 if 4 in lista_juego_actual:
                     index = lista_juego_actual.index(4)
-                    lista_juego_actual[index] = "Guanabana"
+                    lista_juego_actual[index] = f" \033[1;37;40m Guanabana \033[0m"
+                print(f"Jugador actual: \033[33m {jugador[0]} \033[0m")
+                print(f"Nivel actual: \033[33m {n+1} \033[0m")
                 print(f'Memorice la siguiente secuencia...')
-                print(lista_juego_actual)
+                for fruta in range(len(lista_juego_actual)):
+                    print(str(lista_juego_actual[fruta]))
                 time.sleep(5)
                 print(f'Ordene los marcadores en el orden que se le indicó!')
                 time.sleep(3)
