@@ -28,8 +28,8 @@ def juego():
     print('\033[2J')  # Código ANSI para limpiar la pantalla en sistemas Windows
     tiempo_total=0
     p=0
-    for n in range(0,1):
-        for r in range(0,1):
+    for n in range(0,3):
+        for r in range(0,5):
             print(f"Nivel actual: \033[33m {n+1} \033[0m")
             print(f"Ronda actual: \033[33m {r+1}\033[0m")
             for jugador in lista_jugadores:
